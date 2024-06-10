@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Ordenación de Arreglo Multidimensional.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Ordenación de Arreglo Multidimensional.py</font>
+</center></td></tr></table>
+<pre><span class="s0">def </span><span class="s1">ordenar_fila</span><span class="s2">(</span><span class="s1">matriz</span><span class="s2">, </span><span class="s1">fila</span><span class="s2">):</span>
+    <span class="s3"># Verificar si la fila está dentro de los límites de la matriz</span>
+    <span class="s0">if </span><span class="s1">fila </span><span class="s2">&lt; </span><span class="s4">0 </span><span class="s0">or </span><span class="s1">fila </span><span class="s2">&gt;= </span><span class="s1">len</span><span class="s2">(</span><span class="s1">matriz</span><span class="s2">):</span>
+        <span class="s1">print</span><span class="s2">(</span><span class="s5">&quot;Fila no válida.&quot;</span><span class="s2">)</span>
+        <span class="s0">return</span>
+
+    <span class="s3"># Aplicar el algoritmo de Bubble Sort a la fila seleccionada</span>
+    <span class="s1">matriz</span><span class="s2">[</span><span class="s1">fila</span><span class="s2">] = </span><span class="s1">bubble_sort</span><span class="s2">(</span><span class="s1">matriz</span><span class="s2">[</span><span class="s1">fila</span><span class="s2">])</span>
+
+<span class="s0">def </span><span class="s1">bubble_sort</span><span class="s2">(</span><span class="s1">arr</span><span class="s2">):</span>
+    <span class="s1">n </span><span class="s2">= </span><span class="s1">len</span><span class="s2">(</span><span class="s1">arr</span><span class="s2">)</span>
+    <span class="s0">for </span><span class="s1">i </span><span class="s0">in </span><span class="s1">range</span><span class="s2">(</span><span class="s1">n </span><span class="s2">- </span><span class="s4">1</span><span class="s2">):</span>
+        <span class="s0">for </span><span class="s1">j </span><span class="s0">in </span><span class="s1">range</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s1">n </span><span class="s2">- </span><span class="s1">i </span><span class="s2">- </span><span class="s4">1</span><span class="s2">):</span>
+            <span class="s0">if </span><span class="s1">arr</span><span class="s2">[</span><span class="s1">j</span><span class="s2">] &gt; </span><span class="s1">arr</span><span class="s2">[</span><span class="s1">j </span><span class="s2">+ </span><span class="s4">1</span><span class="s2">]:</span>
+                <span class="s1">arr</span><span class="s2">[</span><span class="s1">j</span><span class="s2">], </span><span class="s1">arr</span><span class="s2">[</span><span class="s1">j </span><span class="s2">+ </span><span class="s4">1</span><span class="s2">] = </span><span class="s1">arr</span><span class="s2">[</span><span class="s1">j </span><span class="s2">+ </span><span class="s4">1</span><span class="s2">], </span><span class="s1">arr</span><span class="s2">[</span><span class="s1">j</span><span class="s2">]</span>
+    <span class="s0">return </span><span class="s1">arr</span>
+<span class="s3"># Definir una matriz 3x3 (puede cambiar los valores según tus necesidades)</span>
+<span class="s1">matriz </span><span class="s2">= [</span>
+    <span class="s2">[</span><span class="s4">9</span><span class="s2">, </span><span class="s4">8</span><span class="s2">, </span><span class="s4">7</span><span class="s2">],</span>
+    <span class="s2">[</span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s2">, </span><span class="s4">4</span><span class="s2">],</span>
+    <span class="s2">[</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s2">]</span>
+<span class="s2">]</span>
+
+<span class="s3"># Mostrar la matriz original</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s5">&quot;Matriz original:&quot;</span><span class="s2">)</span>
+<span class="s0">for </span><span class="s1">fila </span><span class="s0">in </span><span class="s1">matriz</span><span class="s2">:</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s1">fila</span><span class="s2">)</span>
+
+<span class="s3"># Seleccionar una fila para ordenar (por ejemplo, la primera fila con índice 0)</span>
+<span class="s1">fila_a_ordenar </span><span class="s2">= </span><span class="s4">0</span>
+<span class="s1">ordenar_fila</span><span class="s2">(</span><span class="s1">matriz</span><span class="s2">, </span><span class="s1">fila_a_ordenar</span><span class="s2">)</span>
+<span class="s3"># Mostrar la matriz con la fila ordenada</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">Matriz con la fila ordenada:&quot;</span><span class="s2">)</span>
+<span class="s0">for </span><span class="s1">fila </span><span class="s0">in </span><span class="s1">matriz</span><span class="s2">:</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s1">fila</span><span class="s2">)</span>
+</pre>
+</body>
+</html>
